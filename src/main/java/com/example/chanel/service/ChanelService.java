@@ -113,8 +113,10 @@ public class ChanelService {
         Map<String, Object> param = (Map<String, Object>) params.get("params");
         User userEmail = repository.findByEmail(param.get("email").toString());
         // 如果是“”代表没有登录过
-        System.out.println(userEmail);
         if (userEmail == null) { // 如果==null说明根本没有这个数据，也说明没有登录过可以注册
+            return;
+        }
+        if (!userEmail.getEmail().equals(param.get("email")) || !userEmail.getPassword().equals(param.get("password"))) {
             return;
         }
         System.out.println("发送cookie");
