@@ -15,14 +15,6 @@ public class ChanelController {
     @Autowired
     ChanelService chanelService;
 
-    @RequestMapping("/chanel")
-    @ResponseBody
-    public String index(@RequestBody HashMap<String, Object> data) {
-
-        int o = (int) data.get("id");
-        System.out.println(o);
-        return "o";
-    }
 
     @PostMapping("/code.do")
     @ResponseBody
