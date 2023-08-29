@@ -4,4 +4,4 @@ npm run build
 
 cd ..
 rm -r src/main/resources/static
-mv vue-project/dist src/main/resources/static
+mv vue-project/dist static
